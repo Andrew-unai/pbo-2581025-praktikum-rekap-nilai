@@ -16,7 +16,16 @@ public class RekapNilai {
             } else if (nilai < 0 || nilai > 100) {
                 System.out.println("Ditolak, harus 0-100");
             } else {
-                // tentukan grade dan keterangan
+                char grade = nilai >= 90 ? 'A' : nilai >= 80 ? 'B' : nilai >= 70 ? 'C' : nilai >= 60 ? 'D' : 'E';
+                String ket = switch (grade) {
+                    case 'A' -> "Sangat Baik";
+                    case 'B' -> "Baik";
+                    case 'C' -> "Cukup";
+                    case 'D' -> "Kurang";
+                    default -> "Gagal";
+                };
+
+                System.out.println("Grade " + grade + " - " + ket);
                 total += nilai;
                 jumlahSah++;
                 no++;
