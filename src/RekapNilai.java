@@ -16,7 +16,9 @@ public class RekapNilai {
             } else if (nilai < 0 || nilai > 100) {
                 System.out.println("Ditolak, harus 0-100");
             } else {
-                char grade = nilai >= 90 ? 'A' : nilai >= 80 ? 'B' : nilai >= 70 ? 'C' : nilai >= 60 ? 'D' : 'E';
+                // Urutan sengaja dibalik: >=60 ditaruh paling atas untuk percobaan
+                char grade = nilai >= 60 ? 'D' : nilai >= 70 ? 'C' : nilai >= 80 ? 'B' : nilai >= 90 ? 'A' : 'E';
+                // jika jalankan dengan input 85, yang terjadi adalah output nilai ke 1 dan 2 menjadi grade D
                 String ket = switch (grade) {
                     case 'A' -> "Sangat Baik";
                     case 'B' -> "Baik";
