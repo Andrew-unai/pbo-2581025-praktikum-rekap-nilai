@@ -31,5 +31,10 @@ public class RekapNilai {
                 no++;
             }
         } while (nilai != SELESAI);
+
+        double rata = jumlahSah == 0 ? 0 : total / jumlahSah;
+        String status = rata >= 60 ? "LULUS" : "TIDAK LULUS";
+
+        System.out.printf("%nNilai sah : %d%nRata-rata : %.2f%nStatus    : %s%n", jumlahSah, rata, status);
     }
 }
